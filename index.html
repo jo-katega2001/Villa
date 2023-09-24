@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Sona Template">
+    <meta name="keywords" content="Sona, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Terrys Villa</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/flaticon.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="path/to/animate.css">
+    <script src="path/to/jquery.min.js"></script>
+    <script src="path/to/jquery.lettering.js"></script>
+    <script src="path/to/jquery.textillate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        // Scale effect
+        $(".green-color").hover(function() {
+          $(this).animate({
+            fontSize: "40px"
+          }, 200);
+        }, function() {
+          $(this).animate({
+            fontSize: "36px"
+          }, 200);
+        });
+    
+        // Color change effect
+        $(".green-color").click(function() {
+          $(this).animate({
+            color: "blue"
+          }, 500).animate({
+            color: "green"
+          }, 500);
+        });
+    
+        // Textillate animation
+        $(".green-color").textillate({
+          autoStart: true,
+          in: {
+            effect: "fadeIn",
+            delayScale: 1.5,
+            delay: 50,
+            sync: false,
+            shuffle: false,
+            reverse: false,
+            callback: function() {
+              // Animation complete callback (optional)
+            }
+          },
+          out: {
+            effect: "fadeOut",
+            delayScale: 1.5,
+            delay: 50,
+            sync: false,
+            shuffle: false,
+            reverse: false,
+            callback: function() {
+              // Animation complete callback (optional)
+            }
+          },
+          loop: true
+        });
+    
+        // Wait for the DOM content to load
+        document.addEventListener('DOMContentLoaded', function() {
+          // Get all the elements with the glowing-text class
+          var glowingTextElements = document.getElementsByClassName('glowing-text');
+    
+          // Create a WebGL renderer
+          var renderer = new THREE.WebGLRenderer();
+          renderer.setSize(window.innerWidth, window.innerHeight);
+          document.body.appendChild(renderer.domElement);
+    
+          // Create a scene
+          var scene = new THREE.Scene();
+    
+          // Create a camera
+          var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+          camera.position.z = 5;
+    
+          // Create a font loader
+          var loader = new THREE.FontLoader();
+    
+          // Load a font file
+          loader.load('path/to/your/font.json', function(font) {
+            // Create a material for the text
+            var material = new THREE.MeshBasicMaterial({ color: 0xffffff });
+    
+            // Loop through all the glowing-text elements
+            for (var i = 0; i < glowingTextElements.length; i++) {
+              var glowingTextElement = glowingTextElements[i];
+    
+              // Get the text content of the element
+              var textContent = glowingTextElement.textContent;
+    
+              // Create a geometry for the text
+              var geometry = new THREE.TextGeometry(textContent, {
+                font: font,
+                size: 0.5,
+                height: 0.2,
+                curveSegments: 12,
+                bevelEnabled: false
+              });
+    
+              // Create a mesh from the geometry and material
+              var mesh = new THREE.Mesh(geometry, material);
+    
+              // Add the mesh to the scene
+              scene.add(mesh);
+            }
+    
+            // Animate the scene
+            function animate() {
+              requestAnimationFrame(animate);
+    
+              // Rotate the text
+              scene.rotation.y += 0.01;
+    
+              // Render the scene with the camera
+              renderer.render(scene, camera);
+            }
+    
+            // Start the animation
+            animate();
+          });
+        });
+      });
+      
+    </script>
+
+    <style>
+
+    .hero-section .container {
+    width: 100%; /* Set the container width to 100% to fill the available space */
+    height: 100vh; /* Set the height to 100% of the viewport height */
+    max-width: 1920px; /* Set the maximum width for larger screens */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.hs-item {
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 991px) {
+    .hs-item {
+        padding-bottom: 50%; /* Adjust the aspect ratio for smaller screens if needed */
+    }
+}
+
+@media (max-width: 575px) {
+    .hs-item {
+        padding-bottom: 100%; /* Adjust the aspect ratio for smaller screens if needed */
+    }
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="top-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul class="tn-left">
+                         
+                           <li> <i class="fab fa-whatsapp">+46764465495</i></li>
+                            <li><i class="fab fa-whatsapp">+447380350562</i></li>
+                            <li><i class="fa fa-envelope"></i>info@terrysvila.co.tz</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="tn-right">
+                            <div class="top-social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-tripadvisor"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                            <a href="#" class="bk-btn">Booking Now</a>
+                            <div class="language-option">
+                                <img src="img/flag.jpg" alt="">
+                                <span>EN <i class="fa fa-angle-down"></i></span>
+                                <div class="flag-dropdown">
+                                    <ul>
+                                        <li><a href="#">Zi</a></li>
+                                        <li><a href="#">Fr</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="logo">
+                            <a href="./index.html">
+                                <img src="img/logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="nav-menu">
+                            <nav class="mainmenu">
+                                <ul>
+                                    <li class="active"><a href="./index.html">Home</a></li>
+                                    <li><a href="./rooms.html">Rooms</a></li>
+                                    <li><a href="./about-us.html">About Us</a></li>
+                                    <li><a href="./gallery.html">Gallery</a></li>
+                                    <li><a href="./contact.html">Contact</a></li>
+                                </ul>
+                            </nav>
+                            <div class="nav-right search-switch">
+                                <i class="icon_search"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+  <!-- Hero Section Begin -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="hero-text">
+                    <h1>Terrys Villa</h1>
+                    <p>
+                        <span style="color: gold; font-size: 24px;">
+                            Discover the beauty of Nungwi, Zanzibar at Terry's Villa. Book your stay today and experience luxury and relaxation.
+                        </span>
+                    </p>
+                    <a href="about-us.html" class="primary-btn">Discover Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+            <div class="col-lg-5 col-md-6 offset-lg-1">
+                <div class="booking-form">
+                    <h3>Book Your Stay</h3>
+                    <form action="#">
+                        <div class="check-date">
+                            <label for="date-in">Check In:</label>
+                            <input type="text" class="date-input" id="date-in">
+                            <i class="icon_calendar"></i>
+                        </div>
+                        <div class="check-date">
+                            <label for="date-out">Check Out:</label>
+                            <input type="text" class="date-input" id="date-out">
+                            <i class="icon_calendar"></i>
+                        </div>
+                        <div class="select-option">
+                            <label for="guest">Guests:</label>
+                            <select id="guest">
+                                <option value="">1 Adult</option>
+                                <option value="">2 Adults</option>
+                                <option value="">3 Adults</option>
+                            </select>
+                        </div>
+                        <div class="select-option">
+                            <label for="room">Rooms:</label>
+                            <select id="room">
+                                <option value="">1 Room</option>
+                                <option value="">2 Rooms</option>
+                                <option value="">3 Rooms</option>
+                            </select>
+                        </div>
+                        <button type="submit">Check Availability</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-slider owl-carousel">
+        <div class="hs-item set-bg" data-setbg="img/hero/hero-1.jpg"></div>
+        <div class="hs-item set-bg" data-setbg="img/hero/hero-2.jpg"></div>
+        <div class="hs-item set-bg" data-setbg="img/hero/hero-3.jpg"></div>
+        <div class="hs-item set-bg" data-setbg="img/gallery/gallery-1.jpg"></div>
+        <div class="hs-item set-bg" data-setbg="img/gallery/gallery-2.jpg"></div>
+        <div class="hs-item set-bg" data-setbg="img/gallery/gallery-3.jpg"></div>
+        <div class="hs-item set-bg" data-setbg="img/gallery/gallery-4.jpg"></div>
+        <div class="hs-item set-bg" data-setbg="img/gallery/gallery-5.jpg"></div>
+        <div class="hs-item set-bg" data-setbg="img/gallery/gallery-6.jpg"></div>
+        <div class="hs-item set-bg" data-setbg="img/gallery/gallery-7.jpg"></div>
+    </div>
+</section>
+<!-- Hero Section End -->
+  <!-- Services Section Start -->
+<section class="services-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>What We Do</span>
+                    <h2>Discover Our Services</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-item">
+                    <i class="flaticon-036-parking"></i>
+                    <h4>Travel Planning</h4>
+                    <p>Experience seamless travel planning with our expert team. We can assist you in arranging transportation and creating custom itineraries to explore the beautiful sights of Nungwi, Zanzibar.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-item">
+                    <i class="flaticon-033-dinner"></i>
+                    <h4>Catering Service</h4>
+                    <p>Indulge in delicious meals prepared by our experienced chefs. We offer a wide range of culinary delights, including local Zanzibari cuisine and international dishes, to satisfy your taste buds.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-item">
+                    <i class="flaticon-026-bed"></i>
+                    <h4>Babysitting</h4>
+                    <p>Enjoy a worry-free stay at Terry's Villa with our professional babysitting service. Our trained staff will ensure that your children are well taken care of, allowing you to relax and unwind.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-item">
+                    <i class="flaticon-024-towel"></i>
+                    <h4>Laundry</h4>
+                    <p>Leave your laundry responsibilities to us. Our efficient laundry service will take care of your garments, ensuring that you have fresh and clean clothes throughout your stay at Terry's Villa.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-item">
+                    <i class="flaticon-044-clock-1"></i>
+                    <h4>Hire a Driver</h4>
+                    <p>Sit back and relax while exploring Nungwi with our reliable driver service. Whether you need transportation for sightseeing or airport transfers, our skilled drivers will ensure a comfortable journey.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-item">
+                    <i class="flaticon-012-cocktail"></i>
+                    <h4>Bar & Drinks</h4>
+                    <p>Unwind and enjoy refreshing beverages at our bar. Choose from a variety of cocktails, mocktails, and other thirst-quenching drinks as you soak up the tropical vibes of Nungwi, Zanzibar.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Services Section End -->
+
+      <!-- Home Room Section Begin -->
+      <section class="hp-room-section">
+        <div class="container-fluid">
+            <div class="hp-room-items">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="hp-room-item set-bg" data-setbg="img/room/room-b1.jpg">
+                            <div class="hr-text">
+                                <h3>Single Room</h3>
+                                <h2 class="green-color" id="per-day">$60<span>Per day</span></h2>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td id="glowing-text"class="r-o">Size:</td>
+                                            <td id="glowing-text">30 ft</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o"id="glowing-text">Capacity:</td>
+                                            <td id="glowing-text">Max person 1</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o"id="glowing-text">Bed:</td>
+                                            <td id="glowing-text">1 King Bed</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o"id="glowing-text">Services:</td>
+                                            <td id="glowing-text">Wifi, Television, Bathroom,...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <a href="#" class="primary-btn">More Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="hp-room-item set-bg" data-setbg="img/room/room-b2.jpg">
+                            <div class="hr-text">
+                                <h3>Double Rooms</h3>
+                                <h2 class="green-color" id="per-month">$1500<span>Per month</span></h2>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="r-o"id="glowing-text">Size:</td>
+                                            <td id="glowing-text">30 ft</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o"id="glowing-text">Capacity:</td>
+                                            <td id="glowing-text">Max person 5</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o"id="glowing-text">Bed:</td>
+                                            <td id="glowing-text">King Beds</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o"id="glowing-text">Services:</td>
+                                            <td id="glowing-text">Wifi, Television, Bathroom,...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <a href="#" class="primary-btn">More Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="hp-room-item set-bg" data-setbg="img/room/room-1.jpg">
+                            <div class="hr-text">
+                                <h3>Multiple Rooms</h3>
+                                <h2 class="green-color" id="per-5-rooms" >$3000<span>Per 5 rooms</span></h2>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="r-o"id="glowing-text">Size:</td>
+                                            <td id="glowing-text">30 ft</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o"id="glowing-text">Capacity:</td>
+                                            <td id="glowing-text">Max person 5</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o"id="glowing-text">Bed:</td>
+                                            <td id="glowing-text">King Beds</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o"id="glowing-text">Services:</td>
+                                            <td id="glowing-text">Wifi, Television, Bathroom,...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <a href="#" class="primary-btn">More Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Home Room Section End -->
+  <!-- Testimonial Section Begin -->
+<section class="testimonial-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Testimonials</span>
+                    <h2>What Customers Say?</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="testimonial-slider owl-carousel">
+                    <div class="ts-item">
+                        <p>After a construction project took longer than expected, my husband, my daughter and I
+                            needed a place to stay for a few nights. As a Chicago resident, we know a lot about our
+                            city, neighborhood and the types of housing options available and absolutely love our
+                            vacation at Terry's Villa located at Nungwi, Zanzibar.</p>
+                        <div class="ti-author">
+                            <div class="rating">
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star-half_alt"></i>
+                            </div>
+                            <h5> - Alexander Vasquez</h5>
+                        </div>
+                        <img src="img/testimonial-logo.png" alt="">
+                    </div>
+                    <div class="ts-item">
+                        <p>After a construction project took longer than expected, my husband, my daughter and I
+                            needed a place to stay for a few nights. As a Chicago resident, we know a lot about our
+                            city, neighborhood and the types of housing options available and absolutely love our
+                            vacation at Terry's Villa located at Nungwi, Zanzibar.</p>
+                        <div class="ti-author">
+                            <div class="rating">
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star-half_alt"></i>
+                            </div>
+                            <h5> - Alexander Vasquez</h5>
+                        </div>
+                        <img src="img/testimonial-logo.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Testimonial Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-text">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="ft-about">
+                            <div class="logo">
+                                <a href="#">
+                                    <img src="img/footer-logo.png" alt="">
+                                </a>
+                            </div>
+                            <p>We inspire and reach millions of travelers<br /> Welcome To Terrys Villa</p>
+                            <div class="fa-social">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1">
+                        <div class="ft-contact">
+                            <h6>Contact Us</h6>
+                            <ul>
+                                <li>+255738378921</li>
+                                <li>terrysvilla.co.tz</li>
+                                <li>Nungwi, Zanzibar</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1">
+                        <div class="ft-newslatter">
+                            <h6>New latest</h6>
+                            <p>Get the latest updates and offers.</p>
+                            <form action="#" class="fn-form">
+                                <input type="text" placeholder="Email">
+                                <button type="submit"><i class="fa fa-send"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-option">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <ul>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#">Terms of use</a></li>
+                            <li><a href="#">Privacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="co-text"><p>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search model Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch"><i class="icon_close"></i></div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
